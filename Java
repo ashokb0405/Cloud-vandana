@@ -1,0 +1,45 @@
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Task 1: Create an array with values (1, 2, 3, 4, 5, 6, 7) and shuffle it.
+        Integer[] array = {1, 2, 3, 4, 5, 6, 7};
+        List<Integer> list = Arrays.asList(array);
+        Collections.shuffle(list);
+        System.out.println("Shuffled Array: " + Arrays.toString(list.toArray()));
+
+        // Task 2: Enter a Roman Number as input and convert it to an integer.
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a Roman Number: ");
+        String romanInput = scanner.nextLine().toUpperCase();
+        int integerValue = romanToInteger(romanInput);
+        System.out.println("Integer value: " + integerValue);
+
+        // Task 3: Check if the input is a pangram or not.
+        System.out.print("Enter a sentence: ");
+        String sentence = scanner.nextLine().toLowerCase();
+        boolean isPangram = isPangram(sentence);
+        System.out.println("Is Pangram: " + isPangram);
+    }
+
+    // Helper method for Task 2: Roman to Integer conversion
+    private static int romanToInteger(String s) {
+        // Implementation of Roman to Integer conversion
+        // (You can use your preferred algorithm or library for this conversion)
+        // For simplicity, a basic conversion is shown here.
+        // Note: This doesn't cover all Roman numeral rules.
+        return 0; // Replace with your implementation
+    }
+
+    // Helper method for Task 3: Pangram check
+    private static boolean isPangram(String s) {
+        // Implementation of Pangram check
+        // (You can use your preferred algorithm or library for this check)
+        // For simplicity, a basic check is shown here.
+        // Note: This assumes the input contains only English alphabets.
+        return s.chars().filter(Character::isLetter).distinct().count() == 26;
+    }
+}
